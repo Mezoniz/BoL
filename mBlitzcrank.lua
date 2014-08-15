@@ -20,7 +20,7 @@ function OnLoad()
 	STS = SimpleTS(STS_PRIORITY_LESS_CAST_MAGIC)
 	DLib = DamageLib()
 	
-	PrintChat ("mBlitzCronk V1.0 By Mezoniz")
+	PrintChat ("mBlitzCronk V1.1 By Mezoniz")
 	
 	--Menu
 	Menu = scriptConfig("Blitzcrank", "Menu")

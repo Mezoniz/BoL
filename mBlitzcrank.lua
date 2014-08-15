@@ -1,4 +1,4 @@
-local version = "1.0"
+local version = "1.1"
 local ts
 
 if myHero.charName ~= "Blitzcrank" then return end
@@ -20,6 +20,7 @@ function OnLoad()
 	STS = SimpleTS(STS_PRIORITY_LESS_CAST_MAGIC)
 	DLib = DamageLib()
 	
+	PrintChat ("mBlitzCronk V1.0 By Mezoniz")
 	
 	--Menu
 	Menu = scriptConfig("Blitzcrank", "Menu")
@@ -37,6 +38,7 @@ function OnLoad()
 		
 	Menu:addSubMenu("Drawings", "Drawings")
 		DManager:CreateCircle((myHero), SOW:MyRange() + 50, 1, {255, 255, 255, 255}):AddToMenu(Menu.Drawings, "AA Range", true, true, true)	
+		DManager:CreateCircle((myHero), 925 + 50, 1, {243, 100, 55, 255}):AddToMenu(Menu.Drawings, "Hook Range", true, true, true)	
 				
 	Menu:addSubMenu("Misc", "Misc")
 	Menu.Misc:addParam("Qhitchance", "Q min hitchance(1 - insta cast)", SCRIPT_PARAM_SLICE, 1, 1, 2)
@@ -69,11 +71,11 @@ function OnLoad()
 	E:SetSkillshot (VPrediction, SKILLSHOT_CIRCULAR, Widths[_E], Delays[_E], Speeds[_E], false)
 	R:SetSkillshot(VPrediction, SKILLSHOT_CIRCULAR, Widths[_R], Delays[_R], Speeds[_R], false)
 	
-	PrintChat ("mBlitzCronk V1.0 By Mezoniz")
-	
-		end
+		
+	end
 	end
 	
+
 	
 function autoIgniteIfKill()
  if slot ~= nil and castDelay < GetTickCount() and player:CanUseSpell(slot) == READY then
